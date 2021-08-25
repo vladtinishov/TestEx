@@ -19,7 +19,7 @@ $params = [
         "customFields" => [
             "prim" => "тестовое задание",
         ],
-        "customerComment" => "<LINK>",
+        "customerComment" => "https://github.com/vladtinishov/TestEx",
         "items" => [
             "productName" => "Маникюрный набор AZ105R Azalita",
         ],

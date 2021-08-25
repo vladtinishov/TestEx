@@ -2,7 +2,7 @@
 
 require_once("Query.php");
 
-$url = "https://superposuda.retailcrm.ru/api/v5/orders";
+$url = "https://superposuda.retailcrm.ru/api/v5/orders/create";
 $apiKey = "QlnRWTTWw9lv3kjxy1A8byjUmBQedYqb";
 $query = new Query($url, $apiKey);
 

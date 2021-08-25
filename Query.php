@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Класс для создания запросов к API
+ * @param String $url ссылка
+ * @param String $apiKey ключ api
+ */
 class Query
 {
     private $orderPost;
@@ -18,9 +23,15 @@ class Query
         }
     }
 
+    /**
+     * Обёртка для curl
+     * @param Array $params параметры запроса
+     * @return Array
+     */
     private function curl(Array $params)
     {
         $result = "";
+
         if ($curl = curl_init($this->orderPost)) {
             curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($params));
             curl_setopt($curl, CURLOPT_HTTPHEADER, ["Content-Type:application/json"]);
@@ -29,6 +40,7 @@ class Query
             curl_close($curl);
         }
 
-        if ($result) var_dump($result);
+        if ($result) return json_decode($result);
+        throw new Exception("Запрос завершился с ошибкой");
     }
 }
